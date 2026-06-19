@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sobre mí · PV</title><meta name="description" content="Currículum de Pablo Vásquez (PV) — producción de espectáculos en vivo: iluminación, video, mapping y láser."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style>
+  :root{--void:#080706;--surface:#110F0D;--card:#15120F;--line:rgba(255,238,220,.09);--line-soft:rgba(255,238,220,.05);
+  --laser:#FF7D2E;--laser-deep:#E8580F;--ember:#FFB066;--white:#F6F2EB;--haze:#998F84;
+  --display:"Montserrat",system-ui,sans-serif;--body:"Montserrat",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{background:var(--void);color:var(--white);font-family:var(--body);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--laser);color:var(--void)}
+  :focus-visible{outline:2px solid var(--laser);outline-offset:3px;border-radius:1px}
+  .display{font-family:var(--display);font-weight:300;text-transform:uppercase;letter-spacing:.16em;line-height:1.12}
+  .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--laser);display:inline-block}
+  /* HOME SLIDESHOW */
+  body.home{overflow:hidden;overscroll-behavior:none}
+  #home{position:fixed;inset:0;overflow:hidden;display:flex}
+  .bg{position:absolute;inset:0}
+  .bg-slide{position:absolute;inset:0;background-size:cover;background-position:center 42%;background-repeat:no-repeat;opacity:0;transition:opacity 1.4s ease-in-out}
+  .bg-slide.active{opacity:1}
+  .bg::after{content:"";position:absolute;inset:0;z-index:1;background:
+    radial-gradient(56% 46% at 50% 40%,rgba(8,7,6,.62),rgba(8,7,6,0) 76%),
+    linear-gradient(180deg,rgba(8,7,6,.60) 0%,rgba(8,7,6,.16) 36%,rgba(8,7,6,.55) 72%,rgba(8,7,6,.92) 100%)}
+  .home-inner{position:relative;z-index:2;pointer-events:none;width:100%;height:100%;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:clamp(60px,12vh,110px) 24px 7vh}
+  .home-inner .logo{display:block;width:min(52vw,320px);max-height:28svh;height:auto;object-fit:contain;margin:0 auto;filter:drop-shadow(0 6px 28px rgba(0,0,0,.7));transition:max-height .45s ease;animation:logoIn 1.4s cubic-bezier(.2,.7,.2,1) both}
+  #home.svc-open .home-inner .logo{max-height:20svh}
+  @keyframes logoIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+  .home-actions{position:absolute;z-index:3;left:0;right:0;bottom:clamp(28px,8vh,76px);display:flex;flex-direction:column;align-items:center;gap:18px;padding:0 24px}
+  .grp{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+  .grp[hidden]{display:none}
+  .svc-grp{flex-direction:column;align-items:center;gap:13px;animation:fadeUp .4s ease both}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .back-link{background:none;border:0;font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--haze);cursor:pointer;transition:color .25s;margin-top:4px}
+  .back-link:hover{color:var(--laser)}
+  .hbtn{font-family:var(--display);font-weight:300;text-transform:uppercase;letter-spacing:.22em;font-size:clamp(.74rem,1.5vw,.95rem);color:#fff;border:1px solid rgba(255,255,255,.55);padding:17px 32px;background:rgba(255,255,255,0);cursor:pointer;transition:background .3s,border-color .3s,transform .25s;white-space:nowrap}
+  .hbtn:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px)}
+  /* TOPBAR */
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:linear-gradient(180deg,rgba(8,7,6,.9),transparent)}
+  .topbar .pvhome{font-family:var(--display);font-weight:600;letter-spacing:.16em;font-size:1.05rem;color:#fff;display:flex;align-items:baseline;gap:9px}
+  .topbar .pvhome small{font-family:var(--mono);font-weight:400;font-size:.6rem;letter-spacing:.2em;color:var(--haze);text-transform:uppercase}
+  .topbar .closev{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--haze);border:1px solid var(--line);padding:10px 16px;transition:all .25s}
+  .topbar .closev:hover{color:#fff;border-color:var(--laser)}
+  /* SUBPAGES */
+  .page{position:relative;min-height:100svh}
+  .view-inner{max-width:1040px;margin:0 auto;padding:120px 28px 100px;min-height:100svh}
+  .section-title{font-family:var(--display);font-weight:300;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(1.9rem,5vw,3rem);line-height:1.1}
+  .lede{color:var(--haze);max-width:52ch;font-size:1.04rem}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;margin-top:48px}
+  .about-text p{color:var(--haze);margin-bottom:18px;font-size:1.05rem}
+  .about-text p strong{color:var(--white);font-weight:500}
+  .cv-row{display:flex;gap:14px;align-items:center;margin-top:28px;flex-wrap:wrap}
+  .cv-note{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:var(--haze);text-transform:uppercase}
+  .about-card{border:1px solid var(--line-soft);background:linear-gradient(160deg,var(--surface),var(--void));padding:38px}
+  .about-card .label{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;color:var(--laser);text-transform:uppercase}
+  .toolbar{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+  .toolbar span{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--haze);border:1px solid var(--line);padding:7px 13px}
+  .btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;padding:14px 26px;border:1px solid var(--laser);color:var(--void);background:var(--laser);transition:transform .25s,box-shadow .25s;cursor:pointer}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px -12px var(--laser)}
+  .btn.ghost{background:transparent;color:var(--white);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--laser);color:var(--ember);box-shadow:none}
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);margin-top:48px}
+  .svc{background:var(--void);padding:42px 32px 46px;position:relative;overflow:hidden;transition:background .4s}
+  .svc::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--laser),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s ease}
+  .svc:hover{background:var(--surface)}.svc:hover::before{transform:scaleX(1)}
+  .svc .num{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;color:var(--laser);display:block;margin-bottom:20px}
+  .svc h3{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.04em;font-size:1.15rem;margin-bottom:14px}
+  .svc p{color:var(--haze);font-size:.95rem}
+  .svc-menu{margin-top:52px;border-top:1px solid var(--line-soft)}
+  .svc-link{display:flex;align-items:center;gap:22px;padding:32px 6px;border-bottom:1px solid var(--line-soft);transition:padding-left .35s,background .35s}
+  .svc-link .ix{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--laser);width:24px;flex:none}
+  .svc-link .nm{font-family:var(--display);font-weight:300;text-transform:uppercase;letter-spacing:.1em;font-size:clamp(1.35rem,3.6vw,2.2rem);color:var(--white);flex:1;transition:color .3s}
+  .svc-link .ar{font-family:var(--mono);font-size:1.1rem;color:var(--haze);opacity:0;transform:translateX(-10px);transition:opacity .35s,transform .35s,color .35s}
+  .svc-link:hover{padding-left:22px;background:linear-gradient(90deg,rgba(255,125,46,.07),transparent)}
+  .svc-link:hover .nm{color:var(--ember)}
+  .svc-link:hover .ar{opacity:1;transform:none;color:var(--laser)}
+  .crumb{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--haze);transition:color .25s}
+  .crumb:hover{color:var(--laser)}
+  .detail-lede{color:var(--haze);font-size:1.12rem;max-width:60ch;margin-top:28px}
+  .detail-lede + .detail-lede{margin-top:18px;font-size:1.04rem}
+  .cap-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--laser);display:block;margin:44px 0 16px}
+  .detail-cta{margin-top:48px}
+  /* CURRÍCULUM */
+  .cv-intro{color:var(--haze);font-size:1.06rem;max-width:58ch;margin-top:22px}
+  .cv-section{margin-top:60px}
+  .cv-h{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:1.15rem;color:var(--white);padding-bottom:14px;border-bottom:1px solid var(--line-soft);margin-bottom:26px}
+  .xp-item{padding:22px 2px;border-bottom:1px solid var(--line-soft);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .xp-item:last-child{border-bottom:0}
+  .xp-main .org{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:1.02rem;color:var(--white)}
+  .xp-main .role{color:var(--haze);font-size:.94rem;margin-top:5px}
+  .xp-year{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--ember);white-space:nowrap;padding-top:5px}
+  .cv-tags{margin-top:0}
+  .cv-tags span{font-size:.74rem;padding:9px 15px}
+  .sw{display:flex;flex-direction:column;gap:20px}
+  .sw-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+  .sw-name{font-size:.98rem;color:var(--white)}
+  .sw-pct{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:var(--haze)}
+  .sw-bar{height:3px;background:var(--line);position:relative;overflow:hidden}
+  .sw-bar i{position:absolute;inset:0 auto 0 0;width:var(--v);background:linear-gradient(90deg,var(--laser-deep),var(--laser))}
+  .sw-group{margin-top:36px}
+  .sw-group:first-child{margin-top:0}
+  .sw-cat{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);margin-bottom:20px}
+  .sw-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 46px}
+  .grid-tags{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+  .grid-tags span{display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:.72rem;letter-spacing:.07em;color:var(--haze);border:1px solid var(--line);padding:13px 16px}
+  .grid-tags span::before{content:"";width:5px;height:5px;flex:none;background:var(--laser);border-radius:50%}
+  .pricing-grid{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+  .price-item{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);padding:16px 20px}
+  .price-name{font-family:var(--mono);font-size:.8rem;letter-spacing:.07em;color:var(--haze);text-transform:uppercase}
+  .price-val{font-family:var(--mono);font-size:1.1rem;letter-spacing:.05em;color:var(--laser);font-weight:600}
+  @media(max-width:560px){.sw-grid{grid-template-columns:1fr}}
+  #contacto-bg{position:absolute;inset:0;background:none center/cover no-repeat;opacity:.16}
+  #contacto-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,7,6,.85),rgba(8,7,6,.95))}
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;margin-top:40px;position:relative;z-index:2}
+  .contact-intro p{color:var(--haze);font-size:1.04rem;margin-top:18px}
+  form .field{margin-bottom:20px}
+  form .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  form label{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--haze);margin-bottom:9px}
+  form label .req{color:var(--laser);margin-left:4px}
+  form input,form textarea{width:100%;background:rgba(255,255,255,.02);border:1px solid var(--line);color:var(--white);font-family:var(--body);font-size:.98rem;font-weight:300;padding:13px 15px;transition:border-color .25s,background .25s}
+  form input:focus,form textarea:focus{outline:none;border-color:var(--laser);background:rgba(255,125,46,.05)}
+  form textarea{resize:vertical;min-height:120px}
+  .form-msg{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;margin-top:14px;min-height:1em}
+  .form-msg.ok{color:var(--ember)}.form-msg.err{color:#ff6b6b}
+  button.submit{margin-top:6px;background:transparent;border:1px solid var(--laser);color:var(--laser);font-family:var(--mono);font-size:.76rem;letter-spacing:.26em;text-transform:uppercase;padding:15px 38px;cursor:pointer;transition:all .3s}
+  button.submit:hover{background:var(--laser);color:var(--void);box-shadow:0 14px 40px -14px var(--laser)}
+  .subfoot{margin-top:64px;padding-top:26px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;position:relative;z-index:2}
+  .subfoot .c{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:var(--haze)}
+  .subfoot .s{display:flex;gap:22px}
+  .subfoot .s a{font-family:var(--mono);font-size:.82rem;letter-spacing:.14em;color:var(--white);text-transform:uppercase;transition:color .25s;font-weight:500}
+  .subfoot .s a:hover{color:var(--laser)}
+  /* Botón flotante Instagram canal */
+  .ig-float{position:fixed;bottom:28px;right:28px;z-index:999;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366);padding:12px 18px 12px 14px;border-radius:50px;box-shadow:0 6px 28px rgba(0,0,0,.45);text-decoration:none;transition:transform .25s,box-shadow .25s}
+  .ig-float:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.5)}
+  .ig-float svg{width:22px;height:22px;fill:#fff;flex:none}
+  .ig-float span{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;white-space:nowrap}
+  @media(max-height:600px){.home-inner .logo{max-height:32svh}}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:34px}.services{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr;gap:30px}.view-inner{padding:104px 22px 80px}}
+  @media(max-width:600px){.home-actions{bottom:clamp(24px,6vh,48px)}.grp{flex-direction:column;align-items:stretch;gap:12px;width:100%;max-width:340px}.hbtn{text-align:center;padding:16px 24px}form .row{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body><div class="topbar"><a class="pvhome" href="index.html">PV <small>@pablotallico</small></a><a class="closev" href="index.html" aria-label="Volver al inicio">Inicio ✕</a></div><main class="page"><div class="view-inner"><span class="eyebrow">Sobre mí</span><h1 class="section-title" style="margin-top:16px">Pablo Vásquez</h1><p class="cv-intro">Profesional en producción de espectáculos en vivo: iluminación, video, mapping y láser. Más de una década dando forma y creatividad en eventos, televisión y grandes producciones.</p><section class="cv-section"><h3 class="cv-h">Habilidades</h3><div class="grid-tags"><span>Mapping</span><span>Visuales</span><span>Animación y colorización</span><span>Steadycam</span><span>Iluminación</span><span>Operador de láser</span></div></section><section class="cv-section"><h3 class="cv-h">Software</h3><div class="sw-group"><span class="sw-cat">Edición y diseño</span><div class="sw-grid"><div class="sw-row"><div class="sw-top"><span class="sw-name">Premier Pro</span><span class="sw-pct">95%</span></div><div class="sw-bar"><i style="--v:95%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">After Effects</span><span class="sw-pct">88%</span></div><div class="sw-bar"><i style="--v:88%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">Illustrator</span><span class="sw-pct">85%</span></div><div class="sw-bar"><i style="--v:85%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">Lightroom</span><span class="sw-pct">78%</span></div><div class="sw-bar"><i style="--v:78%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">Blender</span><span class="sw-pct">70%</span></div><div class="sw-bar"><i style="--v:70%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">C4D</span><span class="sw-pct">80%</span></div><div class="sw-bar"><i style="--v:80%"></i></div></div></div></div><div class="sw-group"><span class="sw-cat">Media servers</span><div class="sw-grid"><div class="sw-row"><div class="sw-top"><span class="sw-name">Resolume Arena</span><span class="sw-pct">90%</span></div><div class="sw-bar"><i style="--v:90%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">Lightact</span><span class="sw-pct">65%</span></div><div class="sw-bar"><i style="--v:65%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">Pixera</span><span class="sw-pct">50%</span></div><div class="sw-bar"><i style="--v:50%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">Notch</span><span class="sw-pct">50%</span></div><div class="sw-bar"><i style="--v:50%"></i></div></div></div></div><div class="sw-group"><span class="sw-cat">Iluminación / consolas</span><div class="sw-grid"><div class="sw-row"><div class="sw-top"><span class="sw-name">GrandMA2</span><span class="sw-pct">85%</span></div><div class="sw-bar"><i style="--v:85%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">GrandMA3</span><span class="sw-pct">70%</span></div><div class="sw-bar"><i style="--v:70%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">Madrix</span><span class="sw-pct">50%</span></div><div class="sw-bar"><i style="--v:50%"></i></div></div></div></div><div class="sw-group"><span class="sw-cat">Láser</span><div class="sw-grid"><div class="sw-row"><div class="sw-top"><span class="sw-name">Beyond</span><span class="sw-pct">75%</span></div><div class="sw-bar"><i style="--v:75%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">Modulaser 2</span><span class="sw-pct">50%</span></div><div class="sw-bar"><i style="--v:50%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">Showkontrol</span><span class="sw-pct">90%</span></div><div class="sw-bar"><i style="--v:90%"></i></div></div></div></div><div class="sw-group"><span class="sw-cat">Previsualización</span><div class="sw-grid"><div class="sw-row"><div class="sw-top"><span class="sw-name">Wysiwyg</span><span class="sw-pct">90%</span></div><div class="sw-bar"><i style="--v:90%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">Capture</span><span class="sw-pct">80%</span></div><div class="sw-bar"><i style="--v:80%"></i></div></div><div class="sw-row"><div class="sw-top"><span class="sw-name">Dependence</span><span class="sw-pct">50%</span></div><div class="sw-bar"><i style="--v:50%"></i></div></div></div></div></section><section class="cv-section"><h3 class="cv-h">Destacado</h3><div class="xp"><div class="xp-item"><div class="xp-main"><div class="org">Sergio Sacoto</div><div class="role">Director de video</div></div><div class="xp-year">2016 — 2026</div></div><div class="xp-item"><div class="xp-main"><div class="org">Premios Latinoamérica Verde</div><div class="role">Director Técnico</div></div><div class="xp-year">2017 — 2026</div></div><div class="xp-item"><div class="xp-main"><div class="org">Red Bull</div><div class="role">Técnico de video en Ecuador</div></div><div class="xp-year">2017 — 2026</div></div><div class="xp-item"><div class="xp-main"><div class="org">Omnilife</div><div class="role">Técnico de video en Ecuador</div></div><div class="xp-year">2016 — 2026</div></div><div class="xp-item"><div class="xp-main"><div class="org">Reina de Quito</div><div class="role">Realizador · Iluminador</div></div><div class="xp-year">2020 — 2026</div></div></div></section><div class="subfoot"><span class="c">© <span class="yr"></span> PV · <a href="https://www.instagram.com/pablotallico/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">@pablotallico</a></span><div class="s"><a href="https://youtube.com/@pablotallico" target="_blank" rel="noopener">YouTube</a><a href="https://tiktok.com/@pablotallico" target="_blank" rel="noopener">TikTok</a></div></div></div></main><a class="ig-float" href="https://www.instagram.com/channel/AbYAZg2iGmd1zZ3Q/" target="_blank" rel="noopener" aria-label="Únete a la comunidad en Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span>Comunidad</span></a><script>document.querySelectorAll(".yr").forEach(e=>e.textContent=new Date().getFullYear());</script></body></html>
